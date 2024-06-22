@@ -9,6 +9,9 @@ You will need [chocolatey installed]( https://chocolatey.org/install)
 - [Instructions for creating environment variables](https://gist.github.com/mitchmindtree/92c8e37fa80c8dddee5b94fc88d1288b)
 - Create a random string for the password value, [here’s a site to help](https://www.random.org/strings/)
 - Call the variable `MYSQL_PWD`, this is the default password env var for root user
+## Set your new password for root
+- Run the following command in PowerShell: `mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '$($env:MYSQL_PW)'" -p`
+- when prompted for password, just press [[ENTER]]
 ## Create a database
 - [MySql Docs on Databasse Creation](https://dev.mysql.com/doc/refman/8.4/en/creating-database.html)
 - Open `mysql` prompt. In your powershell session type and execute the following command: `mysql -u root` you should not get prompted for password if you followed above instructions
